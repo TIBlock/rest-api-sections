@@ -4,15 +4,12 @@ from flask_jwt import jwt_required
 from models.item import ItemModel
 
 class Item(Resource):
-    TABLE_NAME = 'items'
-
     parser = reqparse.RequestParser()
     parser.add_argument('price',
         type=float,
         required=True,
         help="This field cannot be left blank!"
     )
-    parser = reqparse.RequestParser()
     parser.add_argument('store_id',
         type=int,
         required=True,
